@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Relations | MedPass Acquisition Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        .portal-header { padding: 120px 10% 80px; text-align: center; border-bottom: 1px solid var(--border); background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 70%); }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin: 1.5rem 0; letter-spacing: -2px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+        
+        /* Investment Pillars */
+        .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 4rem; }
+        .pillar-card { background: var(--bg-card); padding: 3rem; border-radius: 20px; border: 1px solid var(--border); }
+        .pillar-card h3 { color: var(--vx-teal); margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* Roadmap UI */
+        .roadmap { margin: 6rem 0; padding: 4rem; background: #010409; border-radius: 24px; border: 1px solid var(--border); }
+        .milestone { display: flex; gap: 2rem; margin-bottom: 3rem; position: relative; }
+        .milestone::before { content: ""; position: absolute; left: 9px; top: 30px; width: 2px; height: 100%; background: var(--border); }
+        .milestone:last-child::before { display: none; }
+        .dot { width: 20px; height: 20px; background: var(--vx-blue); border-radius: 50%; margin-top: 8px; flex-shrink: 0; box-shadow: 0 0 10px var(--vx-blue); }
+        .m-content h4 { margin: 0; color: #fff; font-size: 1.2rem; }
+        .m-content p { margin: 5px 0 0; color: var(--text-muted); }
+
+        .cta-box { text-align: center; padding: 5rem; background: linear-gradient(90deg, #0052cc 0%, #002e73 100%); border-radius: 20px; margin-top: 4rem; }
+        .btn-gold { background: #fff; color: var(--vx-blue); padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <a href="index.html" class="back-link">← Return to Vexilla AITS</a>
+        <h1>Investor Relations</h1>
+        <p style="color: var(--text-muted); max-width: 700px; margin: auto;">Scalable Medical Infrastructure for the 2026 Sovereign Economy.</p>
+    </header>
+
+    <main class="content">
+        <section>
+            <h2>The Investment Thesis</h2>
+            <p>MedPass™ addresses a <b>$760 Billion</b> administrative waste problem in US Healthcare. By decentralizing the intake process and utilizing the Vexilla AITS "Autonomous Blanket," we have created a high-margin, low-overhead utility that is essential for every hospital, dental clinic, and specialized practice globally.</p>
+
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <h3>Modular Scaling</h3>
+                    <p>The MedPass protocol is built to "Plug and Play" with existing EHR giants (Epic, Cerner). Our expansion does not require new hardware infrastructure—we utilize the hardware patients already own.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Data as an Asset</h3>
+                    <p>While we operate on a Zero-Knowledge basis for security, the <b>verified accuracy</b> of the data creates a premium ecosystem for clinical trials and pharmaceutical research synchronization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="roadmap">
+            <h2 style="text-align: center; margin-bottom: 4rem;">2026 - 2027 Roadmap</h2>
+            
+            <div class="milestone">
+                <div class="dot"></div>
+                <div class="m-content">
+                    <h4>Q3 2026: Enterprise Alpha</h4>
+                    <p>Rollout of MedPass Protocol to flagship partners within the Solomon Kin Records Media Group network and Philadelphia-based health systems.</p>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="dot"></div>
+                <div class="m-content">
+                    <h4>Q4 2026: Vexilla HomeBase Integration</h4>
+                    <p>Public rollout of the "HomeBase Health" feature, allowing families to manage multi-generational Intake DNA from a single secure hub.</p>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="dot"></div>
+                <div class="m-content">
+                    <h4>Q1 2027: Global Scaling & Targeted M&A</h4>
+                    <p>Expansion into EU markets (GDPR compliance phase). Initiation of acquisition discussions with Tier-1 Security and Health Infrastructure leaders.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-box">
+            <h2 style="color: #fff; margin-bottom: 2rem;">Acquisition & Funding Inquiries</h2>
+            <p style="color: #cbd5e1; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Authorized institutional investors may request access to the full 2026 Pitch Deck, patent filings, and 5-year financial projections.</p>
+            <a href="mailto:investors@vexillaaits.com" class="btn-gold">Request Data Room Access</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Division</p>
+        <p>Private & Confidential. This document does not constitute an offer to sell securities.</p>
+    </footer>
+
+</body>
+</html>
