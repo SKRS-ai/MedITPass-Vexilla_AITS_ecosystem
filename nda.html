@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual NDA | Vexilla AITS Technical Gate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117; 
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.6;
+        }
+
+        /* Nav Minimalist */
+        nav { 
+            padding: 1.5rem 5%; 
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0d1117;
+        }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .container { max-width: 900px; margin: 80px auto; padding: 0 5%; }
+
+        .nda-header { text-align: center; margin-bottom: 60px; }
+        .nda-header h1 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 1rem; }
+        .nda-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        .nda-body { 
+            background: var(--bg-card); 
+            padding: 50px; 
+            border-radius: 20px; 
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-height: 600px;
+            overflow-y: auto;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        /* Scrollbar Styling */
+        .nda-body::-webkit-scrollbar { width: 8px; }
+        .nda-body::-webkit-scrollbar-track { background: var(--bg-dark); }
+        .nda-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        .clause { margin-bottom: 2rem; }
+        .clause h3 { color: #fff; font-size: 1.1rem; margin-bottom: 0.8rem; }
+
+        .auth-section { 
+            background: rgba(0, 102, 255, 0.05); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid var(--vx-blue);
+            text-align: center;
+        }
+
+        .input-group { margin: 20px 0; display: flex; gap: 10px; justify-content: center; }
+        input { 
+            background: #0d1117; 
+            border: 1px solid var(--border); 
+            padding: 12px 20px; 
+            color: #fff; 
+            border-radius: 6px; 
+            width: 300px;
+            font-family: inherit;
+        }
+
+        .btn-sign { 
+            background: var(--vx-blue); 
+            color: #fff; 
+            padding: 12px 30px; 
+            border: none; 
+            border-radius: 6px; 
+            font-weight: 800; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-sign:hover { background: var(--vx-teal); color: #000; box-shadow: 0 0 20px var(--vx-teal); }
+
+        footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-link">← Return to Ecosystem</a>
+        <img src="logo-black.png" alt="Vexilla" style="height: 40px; opacity: 0.5;">
+    </nav>
+
+    <div class="container">
+        <header class="nda-header">
+            <h1>Proprietary Disclosure Agreement</h1>
+            <p>Authorization Required to Access Vexilla AITS Technical Infrastructure</p>
+        </header>
+
+        <div class="nda-body">
+            <div class="clause">
+                <h3>1. Purpose of Disclosure</h3>
+                <p>This Mutual Non-Disclosure Agreement (the "Agreement") is entered into to prevent the unauthorized disclosure of Confidential Information (as defined below) regarding the MedPass™ Handshake Protocol, ScribeBoard™ Hardware Architecture, and Intake DNA™ Data Standards.</p>
+            </div>
+
+            <div class="clause">
+                <h3>2. Definition of Confidential Information</h3>
+                <p>Confidential Information includes all data, software code, hardware schematics, business strategies, and clinical integration methodologies disclosed by Solomon Records LLC (Vexilla AITS Division). This includes the proprietary 3-second NFC burst logic and autonomous synchronization protocols.</p>
+            </div>
+
+            <div class="clause">
+                <h3>3. Obligations of Reviewing Party</h3>
+                <p>The Reviewing Party shall hold and maintain the Confidential Information in strictest confidence for the sole and exclusive benefit of the Disclosing Party. The Reviewing Party shall carefully restrict access to Confidential Information to employees, contractors, and third parties as is reasonably required.</p>
+            </div>
+
+            <div class="clause">
+                <h3>4. Intellectual Property Rights</h3>
+                <p>Nothing in this Agreement is intended to grant any rights to the Reviewing Party under any patent, mask work right, copyright, or other intellectual property right of the Disclosing Party. MedPass™ and Vexilla AITS are protected by the Solomon Records LLC IP Registry.</p>
+            </div>
+
+            <div class="clause">
+                <h3>5. Term</h3>
+                <p>The non-disclosure provisions of this Agreement shall survive for a period of five (5) years from the date of initial disclosure or until the Confidential Information enters the public domain through no fault of the Reviewing Party.</p>
+            </div>
+        </div>
+
+        <div class="auth-section">
+            <h3 style="margin-top: 0;">Electronic Execution</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">By providing your institutional email and clicking below, you execute this MNDA and unlock the 2026 Technical Repository.</p>
+            
+            <div class="input-group">
+                <input type="email" placeholder="Institutional Email (e.g., name@hospital.org)" required>
+                <button class="btn-sign">Execute & Unlock Specs</button>
+            </div>
+            
+            <p style="font-size: 0.7rem; color: #444; margin-top: 15px;">A record of this execution, including your IP address and timestamp, will be logged for governance purposes.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group. Vexilla AITS Infrastructure Division. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
