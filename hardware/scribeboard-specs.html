@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScribeBoard™ Specs | Vexilla Hardware Division</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        .spec-header { padding: 100px 10% 60px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #1e293b 0%, #0d1117 100%); }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+        h1 { font-size: 3rem; margin-top: 1.5rem; letter-spacing: -1px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+        
+        .hardware-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 4rem 0; align-items: center; }
+        .spec-list { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); }
+        .spec-item { margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .spec-label { color: var(--text-muted); font-weight: 600; }
+        .spec-value { color: var(--vx-teal); font-weight: 800; }
+
+        .design-philosophy { margin: 6rem 0; padding: 4rem; background: #010409; border-radius: 24px; border: 1px solid var(--border); text-align: center; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="spec-header">
+        <a href="../index.html" class="back-link">← Back to Ecosystem</a>
+        <h1>ScribeBoard™ Hardware Specs</h1>
+        <p style="color: var(--text-muted); max-width: 600px;">The Physical Gateway for the Autonomous Handshake Protocol.</p>
+    </header>
+
+    <main class="content">
+        <div class="hardware-grid">
+            <div>
+                <h2>The Terminal of the Future</h2>
+                <p>The <b>ScribeBoard™</b> is a low-latency, industrial-grade medical terminal designed for the high-volume clinical environment. It serves as the physical anchor for the <b>Vexilla AITS Technical Blanket</b>, allowing for millisecond data ingestion from any MedPass™ enabled mobile device or wearable.</p>
+                <p>Equipped with a high-resolution e-Ink "Privacy Display" and dual-channel NFC sensors, the ScribeBoard™ ensures that the patient's data is only visible to the authorized clinician during the active handshake window.</p>
+            </div>
+            <div class="spec-list">
+                <h3 style="margin-top: 0; color: #fff;">Technical Specifications</h3>
+                <div class="spec-item"><span class="spec-label">Processor</span><span class="spec-value">V-AITS Quad Core</span></div>
+                <div class="spec-item"><span class="spec-label">Encryption</span><span class="spec-value">AES-256 GCM (HW)</span></div>
+                <div class="spec-item"><span class="spec-label">NFC Range</span><span class="spec-value">&lt; 4.5cm</span></div>
+                <div class="spec-item"><span class="spec-label">Connectivity</span><span class="spec-value">WPA3 / Mesh Ready</span></div>
+                <div class="spec-item"><span class="spec-label">Display</span><span class="spec-value">12.2" Anti-Glare e-Ink</span></div>
+                <div class="spec-item"><span class="spec-label">Battery</span><span class="spec-value">18hr Hot-Swap</span></div>
+            </div>
+        </div>
+
+        <section class="design-philosophy">
+            <h2 style="color: var(--vx-teal);">"Sanitized by Design"</h2>
+            <p style="max-width: 800px; margin: 1.5rem auto; color: var(--text-muted);">The ScribeBoard™ features a seamless, antimicrobial glass surface rated for medical-grade sterilization. By eliminating physical buttons and ports, we reduce the risk of cross-contamination while maintaining a sleek, modern aesthetic that fits any 2026 practice.</p>
+        </section>
+
+        <h2>Universal Mounting & Integration</h2>
+        <p>Whether integrated into the <b>Vexilla HomeBase™</b> for home health monitoring or mounted via VESA-standard brackets in a surgical suite, the ScribeBoard™ communicates back to the clinic's EHR via a secure, whitelisted tunnel. It acts as a "Stateless" input device, meaning no patient data is ever stored on the physical board itself—ensuring that even if the hardware is stolen, the data remains sovereign and secure.</p>
+
+        <div style="text-align: center; margin: 4rem 0;">
+             <p style="color: var(--vx-teal); font-weight: 800; font-size: 1.2rem;">POWERED BY VEXILLA AITS AUTONOMOUS CORE</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla Hardware Division</p>
+        <p>Patent Pending: ScribeBoard Antimicrobial Handshake Terminal.</p>
+    </footer>
+
+</body>
+</html>
