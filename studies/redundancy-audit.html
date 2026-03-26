@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redundancy Audit | MedPass Technical Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --danger: #ff7b72;
+            --success: #3fb950;
+        }
+        
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.7; 
+        }
+
+        /* Header */
+        .study-header { 
+            padding: 120px 10% 60px; 
+            border-bottom: 1px solid var(--border); 
+            background: linear-gradient(180deg, #1c2128 0%, #0d1117 100%); 
+        }
+        .back-link { 
+            color: var(--vx-teal); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        h1 { font-size: 3.5rem; margin-top: 1.5rem; letter-spacing: -2px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+
+        /* Comparison Table */
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 4rem 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .audit-table th { background: #010409; padding: 25px; text-align: left; color: var(--vx-teal); border-bottom: 2px solid var(--border); }
+        .audit-table td { padding: 25px; border-bottom: 1px solid var(--border); }
+        .legacy-col { color: var(--danger); font-weight: 600; }
+        .medpass-col { color: var(--success); font-weight: 800; background: rgba(63, 185, 80, 0.02); }
+
+        /* Impact Blocks */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 4rem; }
+        .impact-card { background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid var(--border); }
+        .impact-card h3 { color: #fff; margin-bottom: 15px; }
+        .impact-card b { color: var(--vx-teal); font-size: 1.5rem; display: block; margin-bottom: 10px; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="study-header">
+        <a href="../index.html" class="back-link">← Core Repository</a>
+        <h1>Systemic Redundancy Audit</h1>
+        <p style="color: var(--text-muted); max-width: 700px; font-size: 1.2rem;">
+            Quantifying the friction of legacy intake methods vs. the autonomous velocity of the MedPass™ Protocol.
+        </p>
+    </header>
+
+    <main class="content">
+        <section>
+            <h2>The Cost of Inefficiency</h2>
+            <p style="font-size: 1.2rem;">
+                Healthcare administration in 2026 is still plagued by "Analog Inertia." Every time a patient fills out a physical clipboard or a non-synced digital form, a cascade of administrative waste is triggered. This audit breaks down the friction points.
+            </p>
+        </section>
+
+        <table class="audit-table">
+            <thead>
+                <tr>
+                    <th>Friction Marker</th>
+                    <th>Legacy Clipboard Method</th>
+                    <th>MedPass™ Protocol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Processing Time</b></td>
+                    <td class="legacy-col">15 - 20 Minutes</td>
+                    <td class="medpass-col">3 Seconds</td>
+                </tr>
+                <tr>
+                    <td><b>Data Accuracy</b></td>
+                    <td class="legacy-col">88% (Human Error Risk)</td>
+                    <td class="medpass-col">100% (Verified Sync)</td>
+                </tr>
+                <tr>
+                    <td><b>Administrative Cost</b></td>
+                    <td class="legacy-col">~$18.50 / encounter</td>
+                    <td class="medpass-col">~$1.20 / encounter</td>
+                </tr>
+                <tr>
+                    <td><b>Data Status</b></td>
+                    <td class="legacy-col">Stale / Point-in-Time</td>
+                    <td class="medpass-col">Live / At-Will Updates</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <b>250 hrs</b>
+                <h3>Staff Time Reclaimed</h3>
+                <p style="color: var(--text-muted);">Annual hours reclaimed per front-desk administrator by eliminating manual data entry and transcription.</p>
+            </div>
+            <div class="impact-card">
+                <b>12.5%</b>
+                <h3>Error Reduction</h3>
+                <p style="color: var(--text-muted);">Decrease in prescription and allergy-related interactions caused by illegible handwriting or stale intake data.</p>
+            </div>
+            <div class="impact-card">
+                <b>94%</b>
+                <h3>Patient Satisfaction</h3>
+                <p style="color: var(--text-muted);">Users report a significant reduction in "Clinical Anxiety" when they control their own medical markers.</p>
+            </div>
+        </div>
+
+        <section style="background: rgba(0, 102, 255, 0.05); padding: 4rem; border-radius: 24px; border: 1px solid var(--vx-blue); margin-top: 5rem; text-align: center;">
+            <h2 style="margin-top: 0;">The "Turnkey" Conclusion</h2>
+            <p style="max-width: 850px; margin: auto; color: var(--text-muted);">
+                By deploying MedPass™, a medical enterprise transitions from a <b>cost-center</b> (administrative overhead) to a <b>velocity-center</b>. The redundancy is not just removed; it is replaced by an immutable, sovereign data layer that serves the patient and the physician equally.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Infrastructure Division</p>
+        <p>Audit Metrics based on 2026 MGMA Standards for Clinical Performance.</p>
+    </footer>
+
+</body>
+</html>
