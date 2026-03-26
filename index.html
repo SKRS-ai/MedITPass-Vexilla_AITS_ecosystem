@@ -16,6 +16,7 @@
             --text-muted: #8b949e;
             --danger: #ff7b72;
             --success: #3fb950;
+            --glow-blue: rgba(0, 102, 255, 0.6);
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -25,83 +26,119 @@
             color: var(--text-main); 
             margin: 0; 
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Fixed Navigation */
+        /* --- NAVIGATION & DROPDOWN FIX --- */
         nav { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 1rem 5%; 
-            background: rgba(13, 17, 23, 0.95); 
-            backdrop-filter: blur(12px);
+            padding: 0.5rem 5%; 
+            background: rgba(13, 17, 23, 0.98); 
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 1000;
         }
+
         .logo-wrapper { display: flex; align-items: center; gap: 2rem; }
-        .logo-vx, .logo-mp { height: 180px; width: auto; display: block; }
+        
+        /* Ominous Blue Glow Enhancement */
+        .logo-vx { 
+            height: 140px; width: auto; 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 0px transparent);
+            cursor: pointer;
+        }
+        .logo-vx:hover { 
+            filter: drop-shadow(0 0 25px var(--vx-blue)) brightness(1.2);
+            transform: scale(1.02);
+        }
+
+        .logo-mp { height: 140px; width: auto; }
         
         .nav-links { display: flex; align-items: center; }
         .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--vx-teal); }
 
-        /* Tech Dropdown */
-        .dropdown { position: relative; display: inline-block; }
+        /* DROPDOWN LOGIC FIXED */
+        .dropdown { position: relative; display: inline-block; padding-bottom: 20px; margin-bottom: -20px; } /* Padding bridge */
+        .dropbtn { cursor: default; }
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: var(--bg-card);
             min-width: 280px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.7);
             z-index: 1;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-top: 10px;
+            border-radius: 12px;
+            top: 100%; /* Sits exactly at the bottom of the nav */
+            left: 0;
+            overflow: hidden;
+            animation: slideUp 0.3s ease-out;
         }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .dropdown-content a {
             color: var(--text-muted);
-            padding: 12px 16px;
+            padding: 14px 20px;
             text-decoration: none;
             display: block;
             font-size: 0.85rem;
             margin-left: 0 !important;
+            border-bottom: 1px solid var(--border);
+            transition: 0.2s;
         }
-        .dropdown-content a:hover { background-color: var(--bg-dark); color: var(--vx-teal); }
+
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { 
+            background-color: var(--bg-dark); 
+            color: var(--vx-teal); 
+            padding-left: 25px; 
+        }
+
+        /* The Fix: Maintain hover state */
         .dropdown:hover .dropdown-content { display: block; }
 
-        .investor-portal { border: 1px solid var(--vx-teal); color: var(--vx-teal) !important; padding: 0.6rem 1.2rem; border-radius: 6px; }
-
-        /* Hero */
-        .hero { padding: 100px 10% 120px; text-align: center; background: radial-gradient(circle at top, #161b22 0%, var(--bg-dark) 80%); }
-        .tag { font-size: 0.75rem; font-weight: 800; color: var(--vx-teal); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: block; }
-        .hero h1 { font-size: 3.8rem; font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -2px; color: #fff; line-height: 1.1; }
-        .hero p { font-size: 1.3rem; color: var(--text-muted); max-width: 850px; margin: 0 auto 3.5rem; }
-
-        /* Handshake Deep Dive Section */
-        .handshake-focus { padding: 100px 10%; border-top: 1px solid var(--border); background: #010409; }
-        .handshake-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .handshake-text h2 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; }
-        .handshake-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .burst-stat { background: var(--bg-card); padding: 1.5rem; border: 1px solid var(--vx-teal); border-radius: 12px; display: inline-block; margin-right: 1rem; }
-        .burst-stat b { font-size: 1.5rem; color: var(--vx-teal); display: block; }
-
-        /* Link Sections */
-        .study-links-grid { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .study-card { background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; transition: 0.3s; }
-        .study-card:hover { border-color: var(--vx-teal); transform: translateY(-5px); }
-        .study-card h3 { margin: 0 0 10px; color: #fff; }
-        .study-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
-
-        footer { padding: 5rem 10%; border-top: 1px solid var(--border); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; background: var(--bg-dark); }
-        .footer-logo { height: 80px; margin-bottom: 2rem; opacity: 0.8; }
-        footer h4 { color: #fff; margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
-        .footer-links a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 1rem; font-size: 0.9rem; transition: 0.2s; }
-        .footer-links a:hover { color: #fff; }
-
-        @media (max-width: 1024px) {
-            .handshake-grid, .study-links-grid, footer { grid-template-columns: 1fr; }
-            .logo-vx, .logo-mp { height: 100px; }
+        .investor-portal { 
+            border: 1px solid var(--vx-teal); 
+            color: var(--vx-teal) !important; 
+            padding: 0.6rem 1.5rem; 
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
         }
+        .investor-portal:hover {
+            background: var(--vx-teal);
+            color: #000 !important;
+            box-shadow: 0 0 20px var(--vx-teal);
+        }
+
+        /* --- HERO & CONTENT --- */
+        .hero { padding: 120px 10%; text-align: center; background: radial-gradient(circle at top, #161b22 0%, var(--bg-dark) 80%); }
+        .hero h1 { font-size: 4rem; font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -2px; color: #fff; line-height: 1.1; }
+        .tag { color: var(--vx-teal); letter-spacing: 3px; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+
+        .handshake-focus { padding: 100px 10%; background: #010409; }
+        .handshake-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        
+        .burst-stat { 
+            background: linear-gradient(145deg, #1c2128, #0d1117); 
+            padding: 2rem; border: 1px solid var(--border); 
+            border-radius: 20px; text-align: center;
+            transition: 0.4s;
+        }
+        .burst-stat:hover { border-color: var(--vx-teal); box-shadow: 0 0 30px rgba(0, 242, 255, 0.15); }
+        .burst-stat b { font-size: 2.5rem; color: var(--vx-teal); display: block; }
+
+        footer { padding: 5rem 10%; border-top: 1px solid var(--border); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; background: #010409; }
+        .footer-logo { height: 70px; margin-bottom: 1rem; filter: grayscale(1); opacity: 0.5; transition: 0.3s; }
+        .footer-logo:hover { filter: grayscale(0); opacity: 1; }
     </style>
 </head>
 <body>
@@ -109,6 +146,7 @@
     <nav>
         <div class="logo-wrapper">
             <img src="logo-black.png" alt="Vexilla AITS" class="logo-vx">
+            <img src="medpass_vault_glyph.png" alt="MedPass" class="logo-mp">
         </div>
         <div class="nav-links">
             <div class="dropdown">
@@ -127,11 +165,13 @@
     </nav>
 
     <header class="hero">
-        <span class="tag">The Vexilla Health Division</span>
+        <span class="tag">Autonomous Health Infrastructure</span>
         <h1>Perfecting the Patient Handshake.</h1>
-        <p>Eliminating the redundant "Clipboard Crisis" through the <b>Sovereign Intake Protocol</b>. MedPass™ allows patients to own their medical identity and update it live, ensuring 100% accuracy at every point of care.</p>
+        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem;">
+            Medical offices waste thousands of hours on redundant paperwork. MedPass™ collapses 15 minutes of legacy intake into 3 seconds of verified data sovereignty.
+        </p>
         <div style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="#handshake" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem;">See the Handshake</a>
+            <a href="#handshake" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800;">Initiate Handshake</a>
             <a href="nda.html" style="color: #fff; padding: 1.2rem; text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--vx-teal);">Technical Specs &rarr;</a>
         </div>
     </header>
@@ -139,70 +179,44 @@
     <section id="handshake" class="handshake-focus">
         <div class="handshake-grid">
             <div class="handshake-text">
-                <h2>The 3-Second Intake Burst</h2>
-                <p>Medical offices waste millions on redundant intake forms. Our <b>Handshake Protocol</b> utilizes secure NFC and QR bursts to move a patient's entire verified history from their device to the clinic terminal in 3 seconds.</p>
-                <div style="display: flex;">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">The Logic Shift.</h2>
+                <p>MedPass™ isn't just an app; it is a **Technical Blanket** for medical enterprises. By allowing patients to update their records "at-will" on their own hardware, we remove the liability of stale data and the burden of manual transcription.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 3rem;">
                     <div class="burst-stat">
                         <b>3.0s</b>
-                        <span>Sync Speed</span>
+                        <span>Burst Speed</span>
                     </div>
                     <div class="burst-stat">
-                        <b>0%</b>
-                        <span>Transcription Error</span>
+                        <b>100%</b>
+                        <span>Data Integrity</span>
                     </div>
                 </div>
-                <p style="margin-top: 2rem; color: var(--vx-teal); font-weight: 700;">
-                    <a href="studies/handshake-protocol.html" style="color: inherit; text-decoration: none;">Explore the full protocol mechanics &rarr;</a>
-                </p>
             </div>
             <div class="handshake-viz">
-                <div style="background: var(--bg-card); padding: 30px; border-radius: 20px; border: 1px solid var(--border);">
-                    <h4 style="margin-top: 0;">Metrics of Redundancy</h4>
-                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 1rem;"><span style="color: var(--danger);">✕</span> Avg. 15 mins spent per form</li>
-                        <li style="margin-bottom: 1rem;"><span style="color: var(--danger);">✕</span> 12% error rate in manual entry</li>
-                        <li style="margin-bottom: 1rem;"><span style="color: var(--success);">✓</span> MedPass: 3-second secure sync</li>
-                        <li><span style="color: var(--success);">✓</span> MedPass: Live "At-Will" updates</li>
+                <div style="background: var(--bg-card); padding: 40px; border-radius: 24px; border: 1px solid var(--border);">
+                    <h3 style="color: var(--vx-teal);">Redundancy Audit</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--text-muted); font-size: 1.1rem;">
+                        <li style="margin-bottom: 1.5rem;"><span style="color: var(--danger);">✕</span> Paperwork: 15-20 min / visit</li>
+                        <li style="margin-bottom: 1.5rem;"><span style="color: var(--danger);">✕</span> Staff: 60% shift on data entry</li>
+                        <li style="margin-bottom: 1.5rem;"><span style="color: var(--success);">✓</span> MedPass: Instant Handshake</li>
+                        <li><span style="color: var(--success);">✓</span> MedPass: Live Accuracy Sync</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="study-links-grid">
-        <a href="studies/data-sovereignty.html" class="study-card">
-            <h3>Data Sovereignty</h3>
-            <p>Why the patient must be the source of truth.</p>
-        </a>
-        <a href="studies/ehr-interop.html" class="study-card">
-            <h3>EHR Interoperability</h3>
-            <p>How we bridge Epic, Cerner, and Allscripts.</p>
-        </a>
-        <a href="studies/biometric-vault.html" class="study-card">
-            <h3>Biometric Vault</h3>
-            <p>Hardware-level medical data security.</p>
-        </a>
-        <a href="studies/workforce-roi.html" class="study-card">
-            <h3>Workforce ROI</h3>
-            <p>Reclaiming staff hours through automation.</p>
-        </a>
-    </section>
-
     <footer>
         <div class="footer-info">
             <img src="logo-black.png" alt="Vexilla" class="footer-logo">
-            <p>Vexilla AITS: The autonomous technical blanket for global enterprise.</p>
-            <p style="font-size: 0.75rem; margin-top: 2rem; opacity: 0.4;">© 2026 Solomon Records LLC Media Group. All Rights Reserved.</p>
+            <p style="color: #444;">Vexilla AITS: The autonomous infrastructure for the 2026 Sovereign Economy.</p>
         </div>
-        
         <div class="footer-links">
             <h4>Intelligence</h4>
             <a href="studies/handshake-protocol.html">Handshake Specs</a>
             <a href="studies/ehr-interop.html">EHR Integration</a>
             <a href="studies/biometric-vault.html">Vault Security</a>
-            <a href="studies/workforce-roi.html">ROI Data</a>
         </div>
-
         <div class="footer-links">
             <h4>Governance</h4>
             <a href="legal/terms.html">Terms of Service</a>
