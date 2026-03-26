@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVIGATION & DROPDOWN STABILITY --- */
+        /* --- NAVIGATION --- */
         nav { 
             display: flex; 
             justify-content: space-between; 
@@ -59,8 +59,23 @@
         .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--vx-teal); }
 
-        /* FIXED DROPDOWN BRIDGE */
-        .dropdown { position: relative; display: inline-block; padding-bottom: 25px; margin-bottom: -25px; }
+        /* --- FIXED DROPDOWN LOGIC --- */
+        .dropdown { 
+            position: relative; 
+            display: inline-block; 
+        }
+
+        /* The "Bridge": This invisible block fills the gap between nav and menu */
+        .dropdown::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 30px; /* Adjust this to match the gap */
+            display: block;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -70,15 +85,20 @@
             z-index: 1001;
             border: 1px solid var(--border);
             border-radius: 12px;
-            top: 75px; 
+            top: calc(100% + 15px); /* Positioned slightly below for aesthetic */
             left: 0;
             overflow: hidden;
-            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Keep menu open when hovering the bridge or the content itself */
+        .dropdown:hover .dropdown-content { 
+            display: block; 
         }
 
         .dropdown-content a {
@@ -91,8 +111,12 @@
             border-bottom: 1px solid var(--border);
             transition: 0.2s;
         }
-        .dropdown-content a:hover { background-color: var(--bg-dark); color: var(--vx-teal); padding-left: 28px; }
-        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a:hover { 
+            background-color: var(--bg-dark); 
+            color: var(--vx-teal); 
+            padding-left: 28px; 
+        }
+        .dropdown-content a:last-child { border-bottom: none; }
 
         .investor-portal { 
             border: 1px solid var(--vx-teal); 
@@ -118,7 +142,6 @@
             border-radius: 24px; text-align: center;
             transition: 0.5s;
         }
-        .burst-stat:hover { border-color: var(--vx-teal); box-shadow: 0 0 40px rgba(0, 242, 255, 0.2); transform: scale(1.03); }
         .burst-stat b { font-size: 3rem; color: var(--vx-teal); display: block; margin-bottom: 0.5rem; }
 
         .audit-card { 
@@ -126,10 +149,9 @@
             padding: 50px; 
             border-radius: 32px; 
             border: 1px solid var(--border);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
-        /* --- FOOTER RESTORED & ENHANCED --- */
+        /* --- FOOTER --- */
         footer { 
             padding: 6rem 10% 4rem; 
             border-top: 1px solid var(--border); 
@@ -138,9 +160,7 @@
             gap: 3rem; 
             background: #010409; 
         }
-        .footer-logo { height: 85px; margin-bottom: 1.5rem; transition: 0.4s; filter: drop-shadow(0 0 0px var(--vx-blue)); }
-        .footer-logo:hover { filter: drop-shadow(0 0 15px var(--vx-blue)) brightness(1.2); }
-        
+        .footer-logo { height: 85px; margin-bottom: 1.5rem; filter: drop-shadow(0 0 0px var(--vx-blue)); }
         footer h4 { color: #fff; margin-bottom: 2rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
         .footer-links a { 
             display: block; 
@@ -152,12 +172,6 @@
         }
         .footer-links a:hover { color: var(--vx-teal); transform: translateX(5px); }
         .copyright { grid-column: 1 / -1; text-align: center; padding-top: 4rem; color: #444; border-top: 1px solid var(--border); margin-top: 2rem; font-size: 0.8rem; }
-
-        @media (max-width: 1200px) { footer { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) {
-            .handshake-grid, footer { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
-        }
     </style>
 </head>
 <body>
@@ -165,6 +179,7 @@
     <nav>
         <div class="logo-wrapper">
             <img src="logo-black.png" alt="Vexilla AITS" class="logo-vx">
+            <img src="medpass_vault_glyph.png" alt="MedPass" class="logo-mp">
         </div>
         <div class="nav-links">
             <div class="dropdown">
@@ -190,8 +205,8 @@
             Legacy intake is a 15-minute liability of stale data and manual errors. MedPass™ collapses the process into a 3-second secure burst of <b>Intake DNA</b>.
         </p>
         <div style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="#handshake" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 0px transparent; transition: 0.3s;">Initiate Protocol</a>
-            <a href="nda.html" style="color: #fff; padding: 1.2rem; text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--vx-teal); transition: 0.3s;">Technical Specs &rarr;</a>
+            <a href="#handshake" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem;">Initiate Protocol</a>
+            <a href="nda.html" style="color: #fff; padding: 1.2rem; text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--vx-teal);">Technical Specs &rarr;</a>
         </div>
     </header>
 
@@ -200,7 +215,7 @@
             <div class="handshake-text">
                 <h2 style="font-size: 3.5rem; margin-bottom: 2rem; letter-spacing: -2px;">The Logic Shift.</h2>
                 <p style="font-size: 1.15rem; color: var(--text-muted);">
-                    When the patient owns the record, accuracy becomes a live variable. MedPass™ removes the "Clipboard Crisis" by enabling patients to update medical markers <b>at-will</b>, syncing instantly with clinical terminals via the Vexilla Core.
+                    When the patient owns the record, accuracy becomes a live variable. MedPass™ removes the "Clipboard Crisis" by enabling patients to update medical markers <b>at-will</b>.
                 </p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 4rem;">
                     <div class="burst-stat">
@@ -222,16 +237,8 @@
                             <span>Paperwork: 15-20 min / encounter</span>
                         </li>
                         <li style="margin-bottom: 1.8rem; display: flex; align-items: flex-start; gap: 15px;">
-                            <span style="color: var(--danger); font-weight: 800;">✕</span> 
-                            <span>Staff: 60% of shift lost to data entry</span>
-                        </li>
-                        <li style="margin-bottom: 1.8rem; display: flex; align-items: flex-start; gap: 15px;">
                             <span style="color: var(--success); font-weight: 800;">✓</span> 
                             <span>MedPass: Universal Handshake Protocol</span>
-                        </li>
-                        <li style="display: flex; align-items: flex-start; gap: 15px;">
-                            <span style="color: var(--success); font-weight: 800;">✓</span> 
-                            <span>MedPass: Autonomous Accuracy Sync</span>
                         </li>
                     </ul>
                 </div>
