@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Repository | MedPass™ System Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.6;
+        }
+
+        nav { 
+            padding: 1.5rem 5%; 
+            border-bottom: 1px solid var(--border);
+            background: #0d1117;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .container { max-width: 1200px; margin: 80px auto; padding: 0 5%; }
+
+        .hub-header { margin-bottom: 60px; border-left: 4px solid var(--vx-blue); padding-left: 30px; }
+        .hub-header h1 { font-size: 3rem; letter-spacing: -2px; margin: 0; }
+        .hub-header p { color: var(--text-muted); font-size: 1.2rem; margin-top: 10px; }
+
+        /* Grid for Study Modules */
+        .repo-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+            gap: 25px; 
+            margin-top: 50px;
+        }
+
+        .repo-card { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border); 
+            padding: 30px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .repo-card:hover { 
+            border-color: var(--vx-teal); 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .repo-card h3 { color: #fff; margin: 0 0 15px; font-size: 1.4rem; }
+        .repo-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .repo-card .status { 
+            font-size: 0.7rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: var(--vx-teal);
+        }
+
+        footer { padding: 60px 0; text-align: center; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="back-link">← Main Ecosystem</a>
+        <img src="../logo-black.png" alt="Vexilla" style="height: 40px; opacity: 0.7;">
+    </nav>
+
+    <div class="container">
+        <header class="hub-header">
+            <h1>System Intelligence</h1>
+            <p>Vexilla AITS Technical Repository & Peer-Review Documentation</p>
+        </header>
+
+        <div class="repo-grid">
+            <a href="handshake-protocol.html" class="repo-card">
+                <div>
+                    <span class="status">Protocol 01</span>
+                    <h3>The 3s Handshake</h3>
+                    <p>Technical specifications for NFC and Secure-QR data bursts at the point of care.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+
+            <a href="data-sovereignty.html" class="repo-card">
+                <div>
+                    <span class="status">Protocol 02</span>
+                    <h3>Intake DNA™ Logic</h3>
+                    <p>The transition from institutional ownership to sovereign patient data stewardship.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+
+            <a href="ehr-interop.html" class="repo-card">
+                <div>
+                    <span class="status">Protocol 03</span>
+                    <h3>EHR Interoperability</h3>
+                    <p>SMART on FHIR mapping for Epic, Cerner, and legacy hospital databases.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+
+            <a href="biometric-vault.html" class="repo-card">
+                <div>
+                    <span class="status">Protocol 04</span>
+                    <h3>Biometric Vault</h3>
+                    <p>Silicon-level encryption and secure enclave isolation for medical markers.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+
+            <a href="workforce-roi.html" class="repo-card">
+                <div>
+                    <span class="status">Module 05</span>
+                    <h3>Workforce ROI</h3>
+                    <p>Analyzing clinical efficiency gains and the reclamation of administrative labor hours.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+
+            <a href="emergency-mesh.html" class="repo-card">
+                <div>
+                    <span class="status">Module 06</span>
+                    <h3>Emergency Mesh</h3>
+                    <p>Offline data accessibility via Vexilla Mesh protocols in zero-connectivity scenarios.</p>
+                </div>
+                <span style="color: var(--vx-teal);">Read Spec →</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Infrastructure Division</p>
+        <p>Access restricted to authorized institutional partners.</p>
+    </footer>
+
+</body>
+</html>
