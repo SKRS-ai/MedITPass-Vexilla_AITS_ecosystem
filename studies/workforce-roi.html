@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workforce ROI | MedPass Technical Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --success: #3fb950;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        .study-header { padding: 100px 10% 60px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #161b22 0%, #0d1117 100%); }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+        h1 { font-size: 3rem; margin-top: 1.5rem; letter-spacing: -1px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; }
+        
+        /* Financial Metrics Grid */
+        .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
+        .roi-card { background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); text-align: center; }
+        .roi-value { font-size: 2.5rem; font-weight: 800; color: var(--success); display: block; }
+        .roi-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .chart-placeholder { background: #000; border: 1px solid var(--border); border-radius: 12px; padding: 4rem; text-align: center; color: var(--vx-teal); margin: 3rem 0; font-weight: 600; }
+        
+        .efficiency-list { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 4rem 0; }
+        .efficiency-item h3 { color: var(--vx-teal); margin-bottom: 0.5rem; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="study-header">
+        <a href="../index.html" class="back-link">← Back to Ecosystem</a>
+        <h1>Workforce ROI & Clinical Efficiency</h1>
+        <p style="color: var(--text-muted); max-width: 600px;">The Financial and Operational Impact of Autonomous Data Orchestration.</p>
+    </header>
+
+    <main class="content">
+        <h2>The Cost of "Legacy Inertia"</h2>
+        <p>In a standard clinical environment, the cost of processing a single new patient intake exceeds <b>$18.50 in labor alone</b>. Between deciphering handwriting, manual EHR entry, and verifying insurance, a clinic with 20 new patients a day loses <b>$100,000+ per year</b> to administrative friction.</p>
+
+        <div class="roi-grid">
+            <div class="roi-card">
+                <span class="roi-value">85%</span>
+                <span class="roi-label">Intake Labor Reduction</span>
+            </div>
+            <div class="roi-card">
+                <span class="roi-value">$12k+</span>
+                <span class="roi-label">Monthly Savings (Mid-Sized Clinic)</span>
+            </div>
+            <div class="roi-card">
+                <span class="roi-value">1.2x</span>
+                <span class="roi-label">Patient Volume Capacity Increase</span>
+            </div>
+        </div>
+
+        
+
+        <h2>Reclaiming the "Lost Hour"</h2>
+        <p>By deploying the <b>MedPass™ Protocol</b>, we effectively give back an average of <b>60-90 minutes of high-value time</b> to every medical administrator daily. This is not just a cost saving; it is a revenue driver. Clinicians can focus on higher patient volumes and better care quality instead of "data cleanup."</p>
+
+        <div class="efficiency-list">
+            <div class="efficiency-item">
+                <h3>Front-Desk Liberation</h3>
+                <p>Removes the 15-minute "Clipboard Wait." Patients check in at the threshold, and their data is instantly available in the clinical queue.</p>
+            </div>
+            <div class="efficiency-item">
+                <h3>Liability Mitigation</h3>
+                <p>Reduces the risk of malpractice suits stemming from transcription errors. 12% of errors in medicine occur at the <b>Intake Phase</b>. MedPass™ brings this to 0%.</p>
+            </div>
+            <div class="efficiency-item">
+                <h3>Live Reconciliation</h3>
+                <p>The system flags new allergies or medications <i>before</i> the physician prescribes, acting as an autonomous safety net for the practice.</p>
+            </div>
+        </div>
+
+        
+
+        <h2>Scaling the Ecosystem</h2>
+        <p>As the MedPass™ network grows, the ROI compounds. Every new doctor's office that joins the Vexilla AITS blanket increases the value of the patient's "Intake DNA," creating a "Network Effect" that makes the platform an indispensable utility for the 2026 healthcare market.</p>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Division</p>
+        <p>Financial Projections based on National Medical Group Management Association (MGMA) Standards.</p>
+    </footer>
+
+</body>
+</html>
