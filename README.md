@@ -72,3 +72,63 @@ Plaintext
     └── API_SPECS.md    # Integration guide for medical providers
 📈 Acquisition & Partnership
 MedPass™ is positioned for a strategic rollout within the Vexilla HomeBase ecosystem in Q4 2026. Interested healthcare partners or institutional investors should contact the Solomon Kin Records LLC Media Group board for authorized access to the technical whitepaper.
+WHITE PAPER: The MedPass™ Sovereign Intake Protocol
+Version: 1.0.4-2026
+
+Parent Organization: Solomon Kin Records LLC / Vexilla AITS Division
+
+Classification: Proprietary Infrastructure Specification
+
+1. Executive Summary: The "Logic Shift"
+MedPass™ is not merely an application; it is an Autonomous Technical Blanket designed to collapse the systemic redundancy of global medical intake. By migrating the "Source of Truth" from fragmented institutional databases to the patient’s own hardware, MedPass™ eliminates the "Clipboard Crisis." This document outlines the structural, legal, and technical framework of the Sovereign Intake Protocol (SIP).
+
+2. Intellectual Property & System Architecture
+The following elements are the exclusive property of Solomon Kin Records LLC and are protected under international trade secret, patent, and trademark laws:
+
+A. The 3-Second Handshake (Proprietary Protocol)
+The core innovation is the Ephemeral Data Burst. Using high-frequency NFC (Near Field Communication) or Secure-QR synchronization, MedPass™ transfers a patient’s entire Intake DNA™ to a clinical terminal in under three seconds. This replaces 15–20 minutes of manual entry.
+
+B. Intake DNA™ (Data Structuring)
+We define "Intake DNA" as the immutable, yet user-editable, packet of medical markers (allergies, medications, surgical history, and insurance credentials). Unlike "Stale Records" kept by hospitals, Intake DNA is At-Will Architecture, meaning it is updated by the patient in real-time.
+
+C. The Master Node Logic
+MedPass™ establishes the patient’s device as the Master Node. Hospitals and doctors merely "borrow" access to this node during the clinical encounter. Once the encounter ends, the "Handshake" is severed, and the patient retains the only decrypted copy of the updated record.
+
+3. Industry Integration & Persona Impact
+MedPass™ services two distinct "Personalities" within the medical ecosystem:
+
+The Provider (Clinician/Doctor): Receives 100% accurate, pre-verified data. This eliminates "Transcription Liability"—the risk of a doctor or nurse misreading a patient's handwriting on a clipboard.
+
+The Patient (Sovereign User): Reclaims authority over their identity. The patient no longer repeats their history to every new specialist; they simply "Authorize" the existing record via a biometric gate.
+
+4. Legal Governance & Information Protection
+HIPAA, HITECH, & GDPR Compliance
+MedPass™ is engineered to exceed the requirements of the Health Insurance Portability and Accountability Act (HIPAA) and the HITECH Act.
+
+Zero-Knowledge Engineering: Solomon Kin Records LLC never "possesses" the patient's data. Our servers act as an encrypted conduit.
+
+Hardware-Level Encryption: Data is stored in the device's Secure Enclave. Even if the MedPass software were compromised, the data remains encrypted at the silicon level, requiring the patient's unique biometric signature (FaceID/TouchID) to unlock.
+
+Audit Trails: Every "Handshake" generates an immutable log entry, providing a clear chain of custody for data transfer, which is essential for institutional audits and malpractice defense.
+
+5. Deployment & The "Vexilla Blanket"
+This software is the first node in the Vexilla AITS Technical Blanket. It is designed to scale across:
+
+General Practice & Family Medicine
+
+Emergency Triage (The Emergency Mesh Protocol)
+
+Specialty Surgery & Pediatrics
+
+Global Medical Tourism (The Global Citizen Joe™ Framework)
+
+6. Proprietary Claim & Legal Jargon
+NOTICE OF INTELLECTUAL PROPERTY: The "Handshake Protocol," "ScribeBoard Hardware Interface," "Intake DNA," and the specific workflow of "Autonomous Sovereign Intake" are Trade Secrets and/or Patent-Pending assets of Solomon Kin Records LLC.
+
+Any unauthorized reproduction, reverse engineering of the 3-second burst logic, or derivative works based on this "At-Will" intake structure is strictly prohibited. Solomon Kin Records LLC reserves all rights to seek injunctive relief and damages in the jurisdictions of Pennsylvania, Minnesota, and federal courts of the United States.
+
+Authored by: The Vexilla AITS Infrastructure Division
+
+On behalf of: Nehemiah Mia Brown, Founder
+
+Date: March 26, 2026
