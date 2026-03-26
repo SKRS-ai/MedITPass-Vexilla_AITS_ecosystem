@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Lifecycle | MedPass Technical Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        .study-header { padding: 100px 10% 60px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #1e293b 0%, #0d1117 100%); }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+        h1 { font-size: 3rem; margin-top: 1.5rem; letter-spacing: -1px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+        
+        .lifecycle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin: 4rem 0; }
+        .step-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); position: relative; }
+        .step-tag { position: absolute; top: -15px; left: 20px; background: var(--vx-blue); color: #fff; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 0.7rem; }
+
+        .app-preview { background: #010409; border: 1px solid var(--border); border-radius: 40px; padding: 2rem; width: 300px; margin: 4rem auto; text-align: center; }
+        .pulse-btn { width: 60px; height: 60px; background: var(--vx-teal); border-radius: 50%; display: inline-block; box-shadow: 0 0 20px var(--vx-teal); margin-top: 2rem; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="study-header">
+        <a href="../index.html" class="back-link">← Back to Ecosystem</a>
+        <h1>Patient Lifecycle & UX</h1>
+        <p style="color: var(--text-muted); max-width: 600px;">The "At-Will" Evolution of Personal Health Stewardship.</p>
+    </header>
+
+    <main class="content">
+        <h2>Ending the Information Lag</h2>
+        <p>Traditional medical data is static; it only changes when you are sitting in a doctor's office. If you develop a new allergy or start a supplement at home, that data is "invisible" to the healthcare system until your next appointment. <b>MedPass™</b> introduces the <b>Live Pulse Architecture</b>, allowing patients to update their <b>Intake DNA™</b> the moment a life change occurs.</p>
+
+        <div class="lifecycle-grid">
+            <div class="step-card">
+                <span class="step-tag">SELF-CURATION</span>
+                <h3>At-Will Updates</h3>
+                <p>Users can modify their medication lists, emergency contacts, or surgical history 24/7. These changes are timestamped and cryptographically signed, ready for the next clinical handshake.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-tag">VERIFICATION</span>
+                <h3>The "Home-to-Clinic" Sync</h3>
+                <p>When the user taps their device at a clinic, MedPass™ highlights only the <b>new changes</b> for the physician, ensuring the doctor is working with the most current data available on the planet.</p>
+            </div>
+        </div>
+
+        
+
+        <h2>The Lifecycle Journey</h2>
+        <p>MedPass™ isn't just for emergencies; it is a companion for every stage of a citizen's life. From pediatric immunization tracking to senior medication management, the platform scales with the user's complexity.</p>
+
+        <div class="step-card" style="margin: 4rem 0;">
+            <h3>The "Family Vault" Feature</h3>
+            <p>Authorized guardians can manage the MedPass™ profiles of children or elderly parents via the <b>Vexilla HomeBase™</b> integration. This ensures that in a crisis, the guardian can authorize a Handshake for a loved one who may be incapacitated.</p>
+        </div>
+
+        <h2>Psychological Impact: Ownership over Anxiety</h2>
+        <p>Data suggests that patients feel 40% less "clinical anxiety" when they know their information is accurate and in their possession. By removing the stress of <b>"Did I remember to tell them about X?"</b>, MedPass™ improves the actual quality of the patient-doctor relationship.</p>
+
+        <div class="app-preview">
+            <div style="color: #fff; font-weight: 800;">MEDPASS™ VAULT</div>
+            <div style="color: var(--text-muted); font-size: 0.7rem; margin-top: 10px;">ALL SYSTEMS SECURE</div>
+            <div class="pulse-btn"></div>
+            <p style="color: var(--vx-teal); font-size: 0.8rem; margin-top: 2rem; font-weight: bold;">TAP TO HANDSHAKE</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Division</p>
+        <p>UX Standards: Accessibility (WCAG 2.1) & HIPAA Privacy Rule Compliant.</p>
+    </footer>
+
+</body>
+</html>
