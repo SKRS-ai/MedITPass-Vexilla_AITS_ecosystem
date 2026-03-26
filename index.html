@@ -7,22 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --vx-blue: #0052cc;
+            --vx-blue: #0066ff;
             --vx-navy: #0f172a;
-            --vx-teal: #00b4d8;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e2e8f0;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --danger: #ef4444;
-            --success: #10b981;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117; /* The "Lightest Dark" - High contrast for logos */
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --danger: #ff7b72;
+            --success: #3fb950;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg-body); 
+            background: var(--bg-dark); 
             color: var(--text-main); 
             margin: 0; 
             line-height: 1.6;
@@ -34,56 +34,55 @@
             justify-content: space-between; 
             align-items: center; 
             padding: 1rem 5%; 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--border);
+            background: rgba(13, 17, 23, 0.9); 
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 1000;
         }
         .logo-wrapper { display: flex; align-items: center; gap: 1.5rem; }
-        .logo-vx { height: 120px; width: auto; }
-        .logo-mp { height: 120px; width: auto; }
+        .logo-vx, .logo-mp { height: 180px; width: auto; } /* 4x Legibility */
         
-        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--vx-blue); }
-        .investor-portal { background: var(--vx-blue); color: #fff !important; padding: 0.6rem 1.2rem; border-radius: 6px; }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--vx-teal); }
+        .investor-portal { border: 1px solid var(--vx-teal); color: var(--vx-teal) !important; padding: 0.6rem 1.2rem; border-radius: 6px; }
 
-        /* Hero: The Problem & Solution */
-        .hero { padding: 80px 10% 120px; text-align: center; background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%); }
-        .tag { font-size: 0.75rem; font-weight: 800; color: var(--vx-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -1.5px; line-height: 1.1; }
+        /* Hero */
+        .hero { padding: 80px 10% 120px; text-align: center; background: radial-gradient(circle at top, #161b22 0%, var(--bg-dark) 80%); }
+        .tag { font-size: 0.75rem; font-weight: 800; color: var(--vx-teal); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -1.5px; color: #fff; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; }
 
-        /* Metrics: The Cost of Redundancy */
-        .metrics-section { padding: 80px 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .metric-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); text-align: center; }
-        .metric-value { font-size: 3rem; font-weight: 800; color: var(--vx-blue); display: block; margin-bottom: 0.5rem; }
+        /* Metrics */
+        .metrics-section { padding: 0 10% 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .metric-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); text-align: center; }
+        .metric-value { font-size: 3rem; font-weight: 800; color: var(--vx-teal); display: block; margin-bottom: 0.5rem; }
         .metric-label { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
 
-        /* Comparative Logic: Clipboard vs. MedPass */
-        .audit-section { padding: 100px 10%; background: #fff; }
+        /* Comparative Logic */
+        .audit-section { padding: 100px 10%; background: #0d1117; }
         .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
-        .audit-box { padding: 2.5rem; border-radius: 20px; }
-        .legacy { background: #fef2f2; border: 1px solid #fecaca; }
-        .medpass { background: #f0fdf4; border: 1px solid #bbf7d0; }
+        .audit-box { padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border); }
+        .legacy { background: rgba(248, 81, 73, 0.05); }
+        .medpass { background: rgba(63, 185, 80, 0.05); border-color: var(--success); }
         
         h3 { font-size: 1.5rem; margin-top: 0; }
         ul { list-style: none; padding: 0; }
         li { margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px; }
-        .dot-red { color: var(--danger); font-weight: bold; }
-        .dot-green { color: var(--success); font-weight: bold; }
+        .dot-red { color: var(--danger); }
+        .dot-green { color: var(--success); }
 
         /* Workforce Impact */
-        .impact-section { padding: 100px 10%; background: var(--vx-navy); color: #fff; text-align: center; }
+        .impact-section { padding: 100px 10%; background: #010409; text-align: center; }
         .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; text-align: left; }
         .impact-card h4 { color: var(--vx-teal); font-size: 1.2rem; margin-bottom: 1rem; }
-        .impact-card p { color: #94a3b8; font-size: 0.95rem; }
+        .impact-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        footer { padding: 4rem 10%; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #fff; }
-        .footer-logo { height: 60px; }
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #0d1117; }
+        .footer-logo { height: 60px; opacity: 0.7; }
 
         @media (max-width: 1024px) {
             .audit-grid, .metrics-section, .impact-grid { grid-template-columns: 1fr; }
-            .logo-vx, .logo-mp { height: 80px; }
+            .logo-vx, .logo-mp { height: 100px; }
         }
     </style>
 </head>
@@ -95,61 +94,58 @@
             <img src="medpass_vault_glyph.png" alt="MedPass" class="logo-mp">
         </div>
         <div class="nav-links">
-            <a href="#audit">System Audit</a>
-            <a href="#impact">Workforce ROI</a>
+            <a href="#audit">Audit</a>
+            <a href="#impact">Workforce</a>
             <a href="investors.html" class="investor-portal">Investor Portal</a>
         </div>
     </nav>
 
     <header class="hero">
-        <span class="tag">The Vexilla Health Division</span>
+        <span class="tag">Vexilla Health Infrastructure</span>
         <h1>Perfecting the Patient Handshake.</h1>
-        <p>Current medical intake relies on legacy recall and illegible paperwork. MedPass™ introduces the <b>Sovereign Intake Card</b>—a hardware-encrypted, patient-owned profile that ensures absolute accuracy while freeing clinicians from administrative burden.</p>
+        <p>Legacy systems rely on outdated recall. MedPass™ introduces the <b>Sovereign Intake Protocol</b>—hardware-encrypted, patient-owned, and updated live at the point of care.</p>
         <div style="display: flex; justify-content: center; gap: 1.5rem;">
-            <a href="#audit" style="background: var(--vx-navy); color: #fff; padding: 1rem 2.5rem; text-decoration: none; border-radius: 8px; font-weight: 700;">Explore the Shift</a>
-            <a href="nda.html" style="color: var(--vx-blue); padding: 1rem; text-decoration: none; font-weight: 700;">Request Technical Specs &rarr;</a>
+            <a href="#audit" style="background: var(--vx-teal); color: #000; padding: 1rem 2.5rem; text-decoration: none; border-radius: 8px; font-weight: 700;">Explore the Shift</a>
         </div>
     </header>
 
     <section class="metrics-section">
         <div class="metric-card">
             <span class="metric-value">250 hrs</span>
-            <span class="metric-label">Annual Staff Time Freed per Clinic</span>
+            <span class="metric-label">Staff Time Reclaimed Annually</span>
         </div>
         <div class="metric-card">
             <span class="metric-value">12.5%</span>
-            <span class="metric-label">Reduction in Prescription Errors</span>
+            <span class="metric-label">Error Reduction Rate</span>
         </div>
         <div class="metric-card">
             <span class="metric-value">94%</span>
-            <span class="metric-label">Patient On-boarding Accuracy</span>
+            <span class="metric-label">Accuracy Improvement</span>
         </div>
     </section>
 
     <section id="audit" class="audit-section">
         <div style="text-align: center;">
             <h2>The Efficiency Gap</h2>
-            <p style="color: var(--text-muted);">Comparing the stagnant Legacy Clipboard to the Autonomous MedPass Handshake.</p>
+            <p style="color: var(--text-muted);">A side-by-side technical comparison.</p>
         </div>
 
         <div class="audit-grid">
             <div class="audit-box legacy">
-                <h3 style="color: var(--danger);">The Legacy Clipboard</h3>
+                <h3 style="color: var(--danger);">Legacy Clipboard</h3>
                 <ul>
-                    <li><span class="dot-red">✕</span> <b>Redundancy:</b> Patients fill out the same history 5+ times a year.</li>
-                    <li><span class="dot-red">✕</span> <b>Latency:</b> Average 15-minute wait time just for data processing.</li>
-                    <li><span class="dot-red">✕</span> <b>Liability:</b> Manual transcription errors lead to dangerous drug interactions.</li>
-                    <li><span class="dot-red">✕</span> <b>Siloing:</b> Data is trapped in paper folders, inaccessible in emergencies.</li>
+                    <li><span class="dot-red">✕</span> <b>Redundancy:</b> Repeated manual entries per visit.</li>
+                    <li><span class="dot-red">✕</span> <b>Latency:</b> 15-minute wait for data processing.</li>
+                    <li><span class="dot-red">✕</span> <b>Liability:</b> Transcription errors in medications.</li>
                 </ul>
             </div>
 
             <div class="audit-box medpass">
-                <h3 style="color: var(--success);">The MedPass Protocol</h3>
+                <h3 style="color: var(--success);">MedPass Protocol</h3>
                 <ul>
-                    <li><span class="dot-green">✓</span> <b>Sovereignty:</b> Update your medical "DNA" once; it follows you everywhere.</li>
-                    <li><span class="dot-green">✓</span> <b>Velocity:</b> 3-second NFC/QR handshake eliminates the waiting room delay.</li>
-                    <li><span class="dot-green">✓</span> <b>Integrity:</b> Digital validation ensures medications and allergies are 100% accurate.</li>
-                    <li><span class="dot-green">✓</span> <b>Universal:</b> Accessible by any specialist, hospital, or EMT via the Vexilla Core.</li>
+                    <li><span class="dot-green">✓</span> <b>Sovereignty:</b> Patient owns and updates data live.</li>
+                    <li><span class="dot-green">✓</span> <b>Velocity:</b> 3-second secure handshake.</li>
+                    <li><span class="dot-green">✓</span> <b>Integrity:</b> Verified "Intake DNA" sync.</li>
                 </ul>
             </div>
         </div>
@@ -157,20 +153,18 @@
 
     <section id="impact" class="impact-section">
         <h2>Workforce Optimization</h2>
-        <p>How MedPass™ transforms the clinical environment from a data-entry hub to a care-centered facility.</p>
-        
         <div class="impact-grid">
             <div class="impact-card">
-                <h4>Eliminate Admin Fatigue</h4>
-                <p>Front-desk personnel no longer spend 60% of their shift deciphering handwriting. MedPass populates EHR fields automatically.</p>
+                <h4>Admin Liberation</h4>
+                <p>Removes deciphering handwriting from the workflow, allowing staff to focus on patient care.</p>
             </div>
             <div class="impact-card">
-                <h4>Empower Doctors</h4>
-                <p>Physicians receive a clean, organized, and timestamped intake summary before they even enter the exam room.</p>
+                <h4>Clinical Accuracy</h4>
+                <p>Provides doctors with a timestamped, organized summary before the exam begins.</p>
             </div>
             <div class="impact-card">
-                <h4>Maximize Accuracy</h4>
-                <p>By allowing patients to update their status <i>live</i> (at home or on the go), the data is always fresh, never stale.</p>
+                <h4>Live Updates</h4>
+                <p>Patients modify their status at will, ensuring data is never stale when it matters most.</p>
             </div>
         </div>
     </section>
@@ -178,12 +172,11 @@
     <footer>
         <div>
             <img src="logo-black.png" alt="Vexilla" class="footer-logo">
-            <p style="margin-top: 10px; color: #888;">© 2026 Solomon Records LLC Media Group. All Rights Reserved.</p>
+            <p style="margin-top: 10px; color: #444;">© 2026 Solomon Records LLC Media Group. All Rights Reserved.</p>
         </div>
         <div class="nav-links">
             <a href="legal/terms.html">Terms</a>
-            <a href="legal/nda.html">Mutual NDA</a>
-            <a href="legal/ip.html">IP Registry</a>
+            <a href="legal/nda.html">NDA</a>
         </div>
     </footer>
 
