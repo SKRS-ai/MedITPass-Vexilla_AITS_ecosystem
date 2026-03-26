@@ -3,144 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedPass™ | Universal Medical Intake Protocol</title>
+    <title>MedPass™ | Universal Medical Intake by Vexilla</title>
     <style>
         :root {
-            --med-blue: #0052cc;
-            --med-dark: #0a0e14;
-            --med-teal: #00f2ff;
-            --text-main: #f0f2f5;
-            --glass: rgba(255, 255, 255, 0.05);
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --vx-dark: #05070a;
+            --vx-card: #0f1218;
+            --vx-border: rgba(255, 255, 255, 0.1);
+            --vx-text: #f0f2f5;
         }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--med-dark); color: var(--text-main); margin: 0; line-height: 1.6; }
-        
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: var(--vx-dark); 
+            color: var(--vx-text); 
+            margin: 0; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; border-bottom: 1px solid #222; background: rgba(10, 14, 20, 0.9); position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: 900; letter-spacing: 1px; color: var(--med-teal); text-decoration: none; font-size: 1.4rem; }
-        .nav-links a { margin-left: 2rem; text-decoration: none; color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a:hover { color: var(--med-teal); }
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1rem 5%; 
+            background: rgba(5, 7, 10, 0.8); 
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--vx-border);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
 
-        /* Hero */
-        .hero { padding: 10% 5%; text-align: center; background: radial-gradient(circle at top, #102a43 0%, #0a0e14 70%); }
-        .hero h1 { font-size: 4rem; margin: 0; background: linear-gradient(to right, #fff, var(--med-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 800px; margin: 2rem auto; }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 45px; width: auto; }
+        
+        .nav-links a { 
+            margin-left: 2rem; 
+            text-decoration: none; 
+            color: #8892b0; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--vx-teal); }
+        .investor-gate { 
+            border: 1px solid var(--vx-teal); 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 4px; 
+            color: var(--vx-teal) !important; 
+        }
 
-        /* Comparison Section */
-        .comparison-table { width: 90%; margin: 5% auto; border-collapse: collapse; background: var(--glass); border-radius: 12px; overflow: hidden; }
-        .comparison-table th, .comparison-table td { padding: 20px; text-align: left; border-bottom: 1px solid #222; }
-        .comparison-table th { background: #16212e; color: var(--med-teal); }
-        .pros { color: #4ade80; } .cons { color: #f87171; }
+        /* Hero Section */
+        .hero { 
+            padding: 120px 8%; 
+            text-align: left;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 50%);
+        }
+        .hero h1 { 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #fff 0%, #00f2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.25rem; color: #8892b0; max-width: 700px; margin-bottom: 2.5rem; }
 
-        /* Industry Pillars */
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 5%; }
-        .pillar-card { background: #111; padding: 2rem; border-radius: 8px; border: 1px solid #222; transition: 0.3s; }
-        .pillar-card:hover { border-color: var(--med-teal); background: #161b22; }
+        /* Data Visualization Blocks */
+        .analytics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 0 8% 80px; }
+        .analytics-card { 
+            background: var(--vx-card); 
+            border: 1px solid var(--vx-border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            position: relative;
+        }
+        .metric { font-size: 3rem; font-weight: 800; color: var(--vx-teal); display: block; }
+        .metric-label { font-size: 1rem; color: #8892b0; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Call to Action */
-        .cta-section { background: var(--med-blue); color: white; padding: 5%; text-align: center; }
-        .btn { padding: 1rem 2.5rem; background: #fff; color: var(--med-blue); text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; margin-top: 1.5rem; }
+        /* Comparison Logic */
+        .comparison-wrap { padding: 80px 8%; background: #0a0d14; }
+        .table-ui { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+        .table-ui th { text-align: left; padding: 20px; color: #555; text-transform: uppercase; font-size: 0.8rem; }
+        .table-ui td { background: var(--vx-card); padding: 25px; border-top: 1px solid var(--vx-border); border-bottom: 1px solid var(--vx-border); }
+        .table-ui td:first-child { border-left: 1px solid var(--vx-border); border-radius: 8px 0 0 8px; font-weight: bold; }
+        .table-ui td:last-child { border-right: 1px solid var(--vx-border); border-radius: 0 8px 8px 0; border-left: 2px solid var(--vx-teal); }
 
-        footer { padding: 3rem 5%; background: #050505; border-top: 1px solid #222; font-size: 0.8rem; color: #555; }
+        /* Personnel Pillars */
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 80px 8%; }
+        .pillar { 
+            padding: 2rem; 
+            border: 1px solid var(--vx-border); 
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .pillar:hover { transform: translateY(-10px); border-color: var(--vx-teal); }
+        .pillar h3 { color: var(--vx-teal); margin-top: 0; }
+
+        /* Footer */
+        footer { 
+            padding: 60px 8%; 
+            background: #020406; 
+            border-top: 1px solid var(--vx-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo { height: 30px; opacity: 0.6; }
+        .legal-links a { color: #444; text-decoration: none; margin-left: 20px; font-size: 0.85rem; }
+
+        .tag { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            background: rgba(0, 242, 255, 0.1); 
+            color: var(--vx-teal); 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo">MEDPASS™ BY VEXILLA</a>
-    <div class="nav-links">
-        <a href="#problem">The Problem</a>
-        <a href="#solution">The Solution</a>
-        <a href="#industries">Industries</a>
-        <a href="investors.html" style="color:var(--med-teal)">Investor Portal</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>The End of the Clipboard.</h1>
-    <p>MedPass™ is a decentralized, patient-owned "Intake DNA" protocol. We've digitized the human medical history into a secure, universal handshake that integrates with any clinical provider in milliseconds.</p>
-    <a href="#solution" class="btn">View Technical Solution</a>
-</section>
-
-<section id="problem" style="padding: 5% 10%;">
-    <h2 style="text-align:center">The Evolutionary Shift: Data Sovereignty</h2>
-    <p style="text-align:center; color:#888;">Why the current healthcare infrastructure is failing and how MedPass™ solves the "Inertia of Information."</p>
-    
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th>Feature</th>
-                <th>Traditional Method (Legacy)</th>
-                <th>MedPass™ Protocol (Vexilla)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Intake Speed</strong></td>
-                <td class="cons">15-45 Minutes (Manual Paperwork)</td>
-                <td class="pros">3-5 Seconds (NFC/QR Burst)</td>
-            </tr>
-            <tr>
-                <td><strong>Data Accuracy</strong></td>
-                <td class="cons">Low (Patient Recall/Legibility Issues)</td>
-                <td class="pros">Absolute (Validated "Intake DNA")</td>
-            </tr>
-            <tr>
-                <td><strong>Data Security</strong></td>
-                <td class="cons">Vulnerable (Physical Paper/Unsecured Servers)</td>
-                <td class="pros">Quantum-Safe (Local Device Encryption)</td>
-            </tr>
-            <tr>
-                <td><strong>Interoperability</strong></td>
-                <td class="cons">Siloed (Clinics don't talk to each other)</td>
-                <td class="pros">Universal (SMART on FHIR Standards)</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
-<section id="industries" style="background:#0f172a; padding: 5% 10%;">
-    <h2 style="text-align:center">Cross-Industry Alignment</h2>
-    <div class="industry-grid">
-        <div class="pillar-card">
-            <h3>Primary Care</h3>
-            <p>Automating patient on-boarding and reducing administrative burn-out for front-desk staff.</p>
+    <nav>
+        <div class="logo-container">
+            <img src="logo-black.png" alt="Vexilla Logo" class="logo-img">
         </div>
-        <div class="pillar-card">
-            <h3>Emergency Med</h3>
-            <p>Instant access to Blood Type, Allergies, and DNR status when the patient cannot speak.</p>
+        <div class="nav-links">
+            <a href="#why">The Why</a>
+            <a href="#solutions">Impact</a>
+            <a href="investors.html" class="investor-gate">Investor Portal</a>
         </div>
-        <div class="pillar-card">
-            <h3>Specialized Care</h3>
-            <p>Seamless surgical history transfer for Dentists, Surgeons, and Mental Health providers.</p>
+    </nav>
+
+    <section class="hero">
+        <span class="tag">VEXILLA AITS / MEDICAL DIVISION</span>
+        <h1>Universal Identity.<br>Zero Friction Healthcare.</h1>
+        <p>MedPass™ is the architectural solution to the healthcare administrative crisis. By centralizing the "Intake DNA" on the patient's device, we eliminate redundant data entry and maximize clinical accuracy.</p>
+        <div class="btn-group">
+            <a href="#why" style="background: var(--vx-teal); color: #000; padding: 1rem 2rem; text-decoration: none; border-radius: 4px; font-weight: bold;">View Infrastructure</a>
         </div>
-        <div class="pillar-card">
-            <h3>Clinical Trials</h3>
-            <p>Ensuring absolute accuracy in participant medication logs and historical data.</p>
+    </section>
+
+    <section class="analytics-grid">
+        <div class="analytics-card">
+            <span class="metric">85%</span>
+            <span class="metric-label">Reduction in Administrative Overhead</span>
         </div>
-    </div>
-</section>
+        <div class="analytics-card">
+            <span class="metric">&lt; 4s</span>
+            <span class="metric-label">Average Check-in Time</span>
+        </div>
+    </section>
 
-<section style="padding: 5% 10%; text-align:center;">
-    <h2>The Investor Thesis</h2>
-    <p style="max-width:800px; margin:auto; color:#94a3b8;">
-        Healthcare waste costs the US $760 Billion annually. MedPass™ addresses the root cause of administrative inefficiency. By positioning the patient as the <strong>Sovereign Source of Truth</strong>, we reduce clinical liability, eliminate redundant labor, and secure the most valuable asset in the world: Human Health Data.
-    </p>
-</section>
+    <section id="why" class="comparison-wrap">
+        <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">The Competitive Edge</h2>
+        <table class="table-ui">
+            <thead>
+                <tr>
+                    <th>Requirement</th>
+                    <th>Legacy Healthcare (Cons)</th>
+                    <th>MedPass™ Protocol (Pros)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data Entry</td>
+                    <td>Manual, repetitive, error-prone paperwork.</td>
+                    <td>Automated, validated "Intake DNA" sync.</td>
+                </tr>
+                <tr>
+                    <td>Interoperability</td>
+                    <td>Siloed records that do not talk to specialists.</td>
+                    <td>Universal "Handshake" with all EHR systems.</td>
+                </tr>
+                <tr>
+                    <td>Emergency Response</td>
+                    <td>Information gap when seconds count.</td>
+                    <td>Instant "Ghost Profile" access for EMTs.</td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>Centralized targets for data breaches.</td>
+                    <td>Decentralized, on-device Post-Quantum encryption.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-<section class="cta-section">
-    <h2>Secure the Vision.</h2>
-    <p>MedPass is currently in private-alpha development within the Vexilla AITS ecosystem.</p>
-    <a href="mailto:investors@vexillaaits.com" class="btn" style="background:var(--med-teal); color:#000;">Request Pitch Deck 2026</a>
-</section>
+    <section id="solutions" class="pillars">
+        <div class="pillar">
+            <h3>For Patients</h3>
+            <p>Your history, allergies, and medications updated once, available everywhere. Absolute data sovereignty.</p>
+        </div>
+        <div class="pillar">
+            <h3>For Doctors</h3>
+            <p>Clean, organized data received before the patient even sits down. Drastically reduced liability.</p>
+        </div>
+        <div class="pillar">
+            <h3>For Institutions</h3>
+            <p>Seamless integration with Epic, Cerner, and HL7 standards. A self-healing administrative asset.</p>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Solomon Records LLC, Media Group | Vexilla AITS Division</p>
-    <p>MedPass™: A Patient-Owned Digital Identity Vault. HIPAA & GDPR Compliant. All IP Registered.</p>
-    <div style="margin-top:1rem;">
-        <a href="legal/terms.html" style="color:#555; margin-right:15px;">Terms</a>
-        <a href="legal/nda.html" style="color:#555;">Mutual NDA</a>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-info">
+            <img src="logo-black.png" alt="Vexilla" class="footer-logo">
+            <p style="margin-top: 10px;">© 2026 Solomon Records LLC Media Group. All Rights Reserved.</p>
+        </div>
+        <div class="legal-links">
+            <a href="legal/terms.html">Terms</a>
+            <a href="legal/nda.html">NDA</a>
+            <a href="legal/ip.html">IP Registry</a>
+        </div>
+    </footer>
 
 </body>
 </html>
