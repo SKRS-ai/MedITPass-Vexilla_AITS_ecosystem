@@ -8,9 +8,8 @@
     <style>
         :root {
             --vx-blue: #0066ff;
-            --vx-navy: #0f172a;
             --vx-teal: #00f2ff;
-            --bg-dark: #0d1117; /* Midnight Slate - High contrast for logo-black.png */
+            --bg-dark: #0d1117; 
             --bg-card: #161b22;
             --border: #30363d;
             --text-main: #f0f6fc;
@@ -28,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* Dual-Branding Navigation */
+        /* Fixed Navigation */
         nav { 
             display: flex; 
             justify-content: space-between; 
@@ -40,19 +39,19 @@
             position: sticky; top: 0; z-index: 1000;
         }
         .logo-wrapper { display: flex; align-items: center; gap: 2rem; }
-        .logo-vx, .logo-mp { height: 180px; width: auto; display: block; } /* 4x Scale for Legibility */
+        .logo-vx, .logo-mp { height: 180px; width: auto; display: block; }
         
         .nav-links { display: flex; align-items: center; }
         .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--vx-teal); }
 
-        /* Technical Studies Dropdown */
+        /* Tech Dropdown */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: var(--bg-card);
-            min-width: 260px;
+            min-width: 280px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
             z-index: 1;
             border: 1px solid var(--border);
@@ -72,39 +71,27 @@
 
         .investor-portal { border: 1px solid var(--vx-teal); color: var(--vx-teal) !important; padding: 0.6rem 1.2rem; border-radius: 6px; }
 
-        /* Hero Section */
+        /* Hero */
         .hero { padding: 100px 10% 120px; text-align: center; background: radial-gradient(circle at top, #161b22 0%, var(--bg-dark) 80%); }
         .tag { font-size: 0.75rem; font-weight: 800; color: var(--vx-teal); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: block; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -2px; color: #fff; line-height: 1.1; }
-        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 850px; margin: 0 auto 3.5rem; }
+        .hero h1 { font-size: 3.8rem; font-weight: 800; margin: 0 0 1.5rem; letter-spacing: -2px; color: #fff; line-height: 1.1; }
+        .hero p { font-size: 1.3rem; color: var(--text-muted); max-width: 850px; margin: 0 auto 3.5rem; }
 
-        /* Redundancy Metrics */
-        .metrics-section { padding: 0 10% 100px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .metric-card { background: var(--bg-card); padding: 3rem 2rem; border-radius: 16px; border: 1px solid var(--border); text-align: center; transition: 0.3s; }
-        .metric-card:hover { border-color: var(--vx-teal); transform: translateY(-5px); }
-        .metric-value { font-size: 3.5rem; font-weight: 800; color: var(--vx-teal); display: block; margin-bottom: 0.5rem; }
-        .metric-label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        /* Handshake Deep Dive Section */
+        .handshake-focus { padding: 100px 10%; border-top: 1px solid var(--border); background: #010409; }
+        .handshake-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .handshake-text h2 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; }
+        .handshake-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .burst-stat { background: var(--bg-card); padding: 1.5rem; border: 1px solid var(--vx-teal); border-radius: 12px; display: inline-block; margin-right: 1rem; }
+        .burst-stat b { font-size: 1.5rem; color: var(--vx-teal); display: block; }
 
-        /* Efficiency Audit */
-        .audit-section { padding: 100px 10%; border-top: 1px solid var(--border); }
-        .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 5rem; }
-        .audit-box { padding: 3rem; border-radius: 24px; border: 1px solid var(--border); position: relative; }
-        .legacy { background: rgba(248, 81, 73, 0.03); border-color: #442d2d; }
-        .medpass { background: rgba(63, 185, 80, 0.03); border-color: var(--success); box-shadow: 0 0 20px rgba(63, 185, 80, 0.1); }
-        
-        h3 { font-size: 1.75rem; margin-top: 0; margin-bottom: 2rem; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 15px; font-size: 1.05rem; }
-        .dot-red { color: var(--danger); font-size: 1.2rem; }
-        .dot-green { color: var(--success); font-size: 1.2rem; }
+        /* Link Sections */
+        .study-links-grid { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .study-card { background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; transition: 0.3s; }
+        .study-card:hover { border-color: var(--vx-teal); transform: translateY(-5px); }
+        .study-card h3 { margin: 0 0 10px; color: #fff; }
+        .study-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
 
-        /* Workforce Impact */
-        .impact-section { padding: 120px 10%; background: #010409; text-align: center; }
-        .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; text-align: left; }
-        .impact-card h4 { color: var(--vx-teal); font-size: 1.3rem; margin-bottom: 1.2rem; }
-        .impact-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
-
-        /* Global Footer */
         footer { padding: 5rem 10%; border-top: 1px solid var(--border); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; background: var(--bg-dark); }
         .footer-logo { height: 80px; margin-bottom: 2rem; opacity: 0.8; }
         footer h4 { color: #fff; margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
@@ -112,7 +99,7 @@
         .footer-links a:hover { color: #fff; }
 
         @media (max-width: 1024px) {
-            .audit-grid, .metrics-section, .impact-grid, footer { grid-template-columns: 1fr; }
+            .handshake-grid, .study-links-grid, footer { grid-template-columns: 1fr; }
             .logo-vx, .logo-mp { height: 100px; }
         }
     </style>
@@ -122,16 +109,17 @@
     <nav>
         <div class="logo-wrapper">
             <img src="logo-black.png" alt="Vexilla AITS" class="logo-vx">
+            <img src="medpass_vault_glyph.png" alt="MedPass" class="logo-mp">
         </div>
         <div class="nav-links">
             <div class="dropdown">
                 <a href="#" class="dropbtn">System Intelligence ▾</a>
                 <div class="dropdown-content">
-                    <a href="/studies/handshake-protocol">Handshake Protocol (NFC/QR)</a>
-                    <a href="/studies/data-sovereignty">Data Sovereignty Logic</a>
-                    <a href="/studies/ehr-interop">EHR Interoperability Specs</a>
-                    <a href="/studies/biometric-vault">Biometric Vault Security</a>
-                    <a href="/studies/workforce-roi">Workforce ROI Analysis</a>
+                    <a href="studies/handshake-protocol.html">Handshake Protocol (NFC/QR)</a>
+                    <a href="studies/data-sovereignty.html">Data Sovereignty Logic</a>
+                    <a href="studies/ehr-interop.html">EHR Interoperability Specs</a>
+                    <a href="studies/biometric-vault.html">Biometric Vault Security</a>
+                    <a href="studies/workforce-roi.html">Workforce ROI Analysis</a>
                 </div>
             </div>
             <a href="#audit">Audit</a>
@@ -140,77 +128,65 @@
     </nav>
 
     <header class="hero">
-        <span class="tag">Autonomous Health Infrastructure</span>
+        <span class="tag">The Vexilla Health Division</span>
         <h1>Perfecting the Patient Handshake.</h1>
-        <p>MedPass™ eliminates the "Clipboard Crisis" by introducing a hardware-encrypted, patient-owned <b>Intake DNA</b> protocol. Engineered by Vexilla AITS to harmonize medical data at the point of care, updated live by the user at will.</p>
+        <p>Eliminating the redundant "Clipboard Crisis" through the <b>Sovereign Intake Protocol</b>. MedPass™ allows patients to own their medical identity and update it live, ensuring 100% accuracy at every point of care.</p>
         <div style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="#audit" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem;">Explore the Shift</a>
-            <a href="nda.html" style="color: #fff; padding: 1.2rem; text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--vx-teal);">Request Technical Specs &rarr;</a>
+            <a href="#handshake" style="background: var(--vx-teal); color: #000; padding: 1.2rem 3rem; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.1rem;">See the Handshake</a>
+            <a href="nda.html" style="color: #fff; padding: 1.2rem; text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--vx-teal);">Technical Specs &rarr;</a>
         </div>
     </header>
 
-    <section class="metrics-section">
-        <div class="metric-card">
-            <span class="metric-value">250 hrs</span>
-            <span class="metric-label">Staff Time Reclaimed Annually</span>
-        </div>
-        <div class="metric-card">
-            <span class="metric-value">12.5%</span>
-            <span class="metric-label">Prescription Error Reduction</span>
-        </div>
-        <div class="metric-card">
-            <span class="metric-value">94%</span>
-            <span class="metric-label">Data Accuracy Increase</span>
-        </div>
-    </section>
-
-    <section id="audit" class="audit-section">
-        <div style="text-align: center;">
-            <h2 style="font-size: 2.5rem;">The Systematic Audit</h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto;">Analyzing the friction of legacy methods vs. the autonomous velocity of MedPass™.</p>
-        </div>
-
-        <div class="audit-grid">
-            <div class="audit-box legacy">
-                <h3 style="color: var(--danger);">Legacy Clipboard Method</h3>
-                <ul>
-                    <li><span class="dot-red">✕</span> <b>Systemic Redundancy:</b> Repeated manual intake per visit across specialized silos.</li>
-                    <li><span class="dot-red">✕</span> <b>Administrative Latency:</b> Average 15-20 minute processing time per encounter.</li>
-                    <li><span class="dot-red">✕</span> <b>Inherent Liability:</b> Transcription errors from manual data entry cause drug interactions.</li>
-                    <li><span class="dot-red">✕</span> <b>Stale Data:</b> Paper records cannot reflect live medication or allergy changes.</li>
-                </ul>
+    <section id="handshake" class="handshake-focus">
+        <div class="handshake-grid">
+            <div class="handshake-text">
+                <h2>The 3-Second Intake Burst</h2>
+                <p>Medical offices waste millions on redundant intake forms. Our <b>Handshake Protocol</b> utilizes secure NFC and QR bursts to move a patient's entire verified history from their device to the clinic terminal in 3 seconds.</p>
+                <div style="display: flex;">
+                    <div class="burst-stat">
+                        <b>3.0s</b>
+                        <span>Sync Speed</span>
+                    </div>
+                    <div class="burst-stat">
+                        <b>0%</b>
+                        <span>Transcription Error</span>
+                    </div>
+                </div>
+                <p style="margin-top: 2rem; color: var(--vx-teal); font-weight: 700;">
+                    <a href="studies/handshake-protocol.html" style="color: inherit; text-decoration: none;">Explore the full protocol mechanics &rarr;</a>
+                </p>
             </div>
-
-            <div class="audit-box medpass">
-                <h3 style="color: var(--success);">The MedPass Protocol</h3>
-                <ul>
-                    <li><span class="dot-green">✓</span> <b>Data Sovereignty:</b> Patient owns and updates their "Intake DNA" in real-time.</li>
-                    <li><span class="dot-green">✓</span> <b>Autonomous Velocity:</b> 3-second secure handshake via NFC/QR technology.</li>
-                    <li><span class="dot-green">✓</span> <b>High-Fidelity Integrity:</b> Digital validation ensures 100% accuracy for clinicians.</li>
-                    <li><span class="dot-green">✓</span> <b>Universal Handshake:</b> Built on SMART on FHIR to speak to any hospital system.</li>
-                </ul>
+            <div class="handshake-viz">
+                <div style="background: var(--bg-card); padding: 30px; border-radius: 20px; border: 1px solid var(--border);">
+                    <h4 style="margin-top: 0;">Metrics of Redundancy</h4>
+                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                        <li style="margin-bottom: 1rem;"><span style="color: var(--danger);">✕</span> Avg. 15 mins spent per form</li>
+                        <li style="margin-bottom: 1rem;"><span style="color: var(--danger);">✕</span> 12% error rate in manual entry</li>
+                        <li style="margin-bottom: 1rem;"><span style="color: var(--success);">✓</span> MedPass: 3-second secure sync</li>
+                        <li><span style="color: var(--success);">✓</span> MedPass: Live "At-Will" updates</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="impact" class="impact-section">
-        <h2 style="font-size: 2.5rem;">Workforce Optimization</h2>
-        <p style="color: var(--text-muted);">Transforming clinical operations through autonomous data orchestration.</p>
-        
-        <div class="impact-grid">
-            <div class="impact-card">
-                <h4>Administrative Freedom</h4>
-                <p>Eliminates the "deciphering" phase of the workflow. Front-desk staff are re-allocated from data entry to high-value patient care.</p>
-            </div>
-            <div class="impact-card">
-                <h4>Point-of-Care Clarity</h4>
-                <p>Doctors receive a clean, organized, and timestamped intake summary before the exam, maximizing consultation value.</p>
-            </div>
-            <div class="impact-card">
-                <h4>Live Lifecycle Updates</h4>
-                <p>MedPass allows users to update their status "at will." Changes are instantly ready for the next medical handshake.</p>
-            </div>
-        </div>
+    <section class="study-links-grid">
+        <a href="studies/data-sovereignty.html" class="study-card">
+            <h3>Data Sovereignty</h3>
+            <p>Why the patient must be the source of truth.</p>
+        </a>
+        <a href="studies/ehr-interop.html" class="study-card">
+            <h3>EHR Interoperability</h3>
+            <p>How we bridge Epic, Cerner, and Allscripts.</p>
+        </a>
+        <a href="studies/biometric-vault.html" class="study-card">
+            <h3>Biometric Vault</h3>
+            <p>Hardware-level medical data security.</p>
+        </a>
+        <a href="studies/workforce-roi.html" class="study-card">
+            <h3>Workforce ROI</h3>
+            <p>Reclaiming staff hours through automation.</p>
+        </a>
     </section>
 
     <footer>
@@ -222,10 +198,10 @@
         
         <div class="footer-links">
             <h4>Intelligence</h4>
-            <a href="/studies/handshake-protocol">Handshake Specs</a>
-            <a href="/studies/ehr-interop">EHR Integration</a>
-            <a href="/studies/biometric-vault">Vault Security</a>
-            <a href="/studies/workforce-roi">ROI Data</a>
+            <a href="studies/handshake-protocol.html">Handshake Specs</a>
+            <a href="studies/ehr-interop.html">EHR Integration</a>
+            <a href="studies/biometric-vault.html">Vault Security</a>
+            <a href="studies/workforce-roi.html">ROI Data</a>
         </div>
 
         <div class="footer-links">
