@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHR Interoperability | MedPass Technical Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --success: #3fb950;
+        }
+        
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.7; 
+        }
+
+        /* Study Header */
+        .study-header { 
+            padding: 120px 10% 60px; 
+            border-bottom: 1px solid var(--border); 
+            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%); 
+        }
+        .back-link { 
+            color: var(--vx-teal); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        h1 { font-size: 3.5rem; margin-top: 1.5rem; letter-spacing: -2px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+        
+        /* The Architecture Grid */
+        .arch-grid { 
+            display: grid; 
+            grid-template-columns: 1.2fr 0.8fr; 
+            gap: 4rem; 
+            margin: 4rem 0; 
+            align-items: start;
+        }
+        
+        .feature-block { margin-bottom: 3.5rem; }
+        .feature-block h3 { color: var(--vx-teal); font-size: 1.5rem; margin-bottom: 1rem; }
+        .feature-block p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Code/Logic Window */
+        .logic-window { 
+            background: #010409; 
+            border: 1px solid var(--border); 
+            border-radius: 12px; 
+            padding: 2rem; 
+            font-family: 'Courier New', monospace; 
+            font-size: 0.85rem;
+            position: sticky;
+            top: 120px;
+        }
+        .token-key { color: #79c0ff; }
+        .token-val { color: #a5d6ff; }
+        .token-comment { color: #6e7681; }
+
+        /* Standards Bar */
+        .standards-bar { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 3rem 0; 
+            border-top: 1px solid var(--border); 
+            border-bottom: 1px solid var(--border);
+            margin: 4rem 0;
+            opacity: 0.6;
+            filter: grayscale(1);
+        }
+        .standard-item { font-weight: 800; font-size: 1.2rem; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="study-header">
+        <a href="../index.html" class="back-link">← Core Repository</a>
+        <h1>EHR Interoperability</h1>
+        <p style="color: var(--text-muted); max-width: 700px; font-size: 1.2rem;">
+            Bridging the gap between Sovereign Patient Data and Institutional Medical Records through universal API mapping.
+        </p>
+    </header>
+
+    <main class="content">
+        <section>
+            <h2>The Universal Data Adapter</h2>
+            <p style="font-size: 1.2rem;">
+                Medical data today is trapped in proprietary "walled gardens." A patient's record in an Epic system cannot effectively communicate with a Cerner or Meditech system. **MedPass™** acts as the universal translator, utilizing the **SMART on FHIR** framework to ensure that no matter where a patient goes, their data is instantly readable.
+            </p>
+        </section>
+
+        
+
+        <div class="arch-grid">
+            <div class="tech-specs">
+                <div class="feature-block">
+                    <h3>Fast Healthcare Interoperability Resources (FHIR)</h3>
+                    <p>MedPass™ translates raw user input into HL7 FHIR R4 resources. This allows clinical terminals to ingest complex data like medication dosages, active allergies, and surgical histories without manual re-entry.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Passive Integration Logic</h3>
+                    <p>Unlike traditional "Deep Integrations" that take years to implement, MedPass™ functions as a high-fidelity input device. We utilize OAuth 2.0 and OpenID Connect to securely bridge the Vexilla Core with the clinic's existing EHR portal.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>The "Conflict Resolution" Layer</h3>
+                    <p>When the Handshake occurs, our logic engine compares the patient's "Live Update" with the clinic's existing "Stale Record." Discrepancies are highlighted for the physician to verify in one click, ensuring the clinical record is always updated to the patient's current reality.</p>
+                </div>
+            </div>
+
+            <div class="logic-window">
+                <div class="token-comment">// MedPass FHIR Payload Example</div>
+                <div style="margin-top: 1rem;">
+                    {<br>
+                    &nbsp;&nbsp;<span class="token-key">"resourceType"</span>: <span class="token-val">"MedicationStatement"</span>,<br>
+                    &nbsp;&nbsp;<span class="token-key">"status"</span>: <span class="token-val">"active"</span>,<br>
+                    &nbsp;&nbsp;<span class="token-key">"medication"</span>: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="token-key">"text"</span>: <span class="token-val">"Lisinopril 10mg"</span><br>
+                    &nbsp;&nbsp;},<br>
+                    &nbsp;&nbsp;<span class="token-key">"subject"</span>: { <span class="token-key">"display"</span>: <span class="token-val">"Sovereign_ID_VX"</span> },<br>
+                    &nbsp;&nbsp;<span class="token-key">"dateAsserted"</span>: <span class="token-val">"2026-03-26T12:00:00Z"</span><br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="standards-bar">
+            <div class="standard-item">HL7® FHIR®</div>
+            <div class="standard-item">SMART® Health Cards</div>
+            <div class="standard-item">DICOM®</div>
+            <div class="standard-item">LOINC®</div>
+        </div>
+
+        <section style="background: rgba(0, 102, 255, 0.05); padding: 4rem; border-radius: 24px; border: 1px solid var(--vx-blue);">
+            <h2 style="margin-top: 0;">Clinical Efficiency Impact</h2>
+            <p>By automating the data mapping process, we remove the "Administrative Middleman." Clinics utilizing the MedPass™ Integration Layer report a **60% reduction in data entry errors** and an average of **12 minutes saved per patient encounter**. This isn't just a technical upgrade; it's an operational revolution.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Infrastructure Division</p>
+        <p>All medical data standards compliant with HIPAA/HITECH regulations.</p>
+    </footer>
+
+</body>
+</html>
