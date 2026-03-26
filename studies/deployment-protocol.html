@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Protocol | MedPass Technical Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vx-blue: #0066ff;
+            --vx-teal: #00f2ff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        .study-header { padding: 100px 10% 60px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #1e293b 0%, #0d1117 100%); }
+        .back-link { color: var(--vx-teal); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+        h1 { font-size: 3rem; margin-top: 1.5rem; letter-spacing: -1px; }
+
+        .content { padding: 80px 10%; max-width: 1200px; margin: auto; }
+        
+        .deploy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin: 4rem 0; }
+        .phase-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); }
+        .phase-tag { color: var(--vx-teal); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
+        
+        .infra-diagram { background: #010409; border: 1px solid var(--border); border-radius: 12px; padding: 3rem; text-align: center; margin: 4rem 0; }
+
+        footer { padding: 4rem 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="study-header">
+        <a href="../index.html" class="back-link">← Back to Ecosystem</a>
+        <h1>Deployment & Infrastructure</h1>
+        <p style="color: var(--text-muted); max-width: 600px;">The Operational Blueprint for Transitioning Clinics to Autonomous Intake.</p>
+    </header>
+
+    <main class="content">
+        <h2>Zero-Friction Implementation</h2>
+        <p>The strength of MedPass™ lies in its <b>Non-Invasive Deployment</b> model. We do not require clinics to rip and replace their existing server architecture. Instead, we introduce a hardware-software "Blanket" that sits atop current workflows, providing an immediate upgrade to data velocity.</p>
+
+        
+
+        <div class="deploy-grid">
+            <div class="phase-card">
+                <span class="phase-tag">Phase 01: Gateway Install</span>
+                <p>Deployment of the <b>Vexilla Secure Gateway (VSG)</b>—a low-profile hardware node that enables NFC and Encrypted QR handshakes at the front desk and in triage rooms.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-tag">Phase 02: EHR Mapping</span>
+                <p>Our engineering team performs a "Field-to-Field" mapping of the clinic’s specific intake forms into the MedPass <b>Intake DNA™</b> standard via SMART on FHIR protocols.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-tag">Phase 03: Staff Sync</span>
+                <p>Minimalist training for administrative staff. The workflow shifts from "Data Entry" to "Data Verification," reducing typical onboarding time for new hires by 60%.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-tag">Phase 04: Live Go-Live</span>
+                <p>Concurrent rollout where patients can begin using their Sovereign Medical ID immediately. Paper backups are phased out over a 30-day "Confidence Window."</p>
+            </div>
+        </div>
+
+        <h2>The Maintenance Cycle: Self-Healing Nodes</h2>
+        <p>Utilizing the <b>Vexilla AITS</b> backbone, every MedPass terminal is a "Self-Healing" node. Security patches and EHR API updates are pushed autonomously from the Vexilla Core, ensuring the clinic is always operating on the latest compliance standards without needing a dedicated on-site IT team.</p>
+
+        <div class="infra-diagram">
+            <h3 style="color: var(--vx-teal);">Autonomous Monitoring Hub</h3>
+            <p style="color: var(--text-muted);">Real-time tracking of Handshake Latency, Encryption Integrity, and EHR Sync Status.</p>
+        </div>
+
+        <h2>Scalability: From Clinic to Hospital System</h2>
+        <p>Whether it is a single-doctor dental practice or a multi-state hospital network, the deployment protocol remains the same. The <b>Vexilla Technical Blanket</b> scales horizontally, allowing for rapid expansion across entire regions with zero loss in data integrity or security.</p>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Solomon Records LLC Media Group | Vexilla AITS Division</p>
+        <p>Deployment Logistics Certified: ISO-27001 & SOC2 Type II Frameworks.</p>
+    </footer>
+
+</body>
+</html>
